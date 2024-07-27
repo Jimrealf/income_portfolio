@@ -4,9 +4,11 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const incomeRoutes = require('./routes/incomeRoutes');
 const userRoutes = require('./routes/userRoutes');
+const swaggerSetup = require('./swagger');
 require('dotenv').config();
 
 const app = express();
+swaggerSetup(app);
 
 // Middleware
 app.use(express.json());
